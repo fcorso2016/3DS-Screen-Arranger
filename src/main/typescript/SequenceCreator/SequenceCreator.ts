@@ -8,12 +8,12 @@ class SequenceCreator {
     }
 
     createProject(dest : ProjectItem) : void {
-        var folder = dest.createBin(this.templateName);
-        
-        var sourceClips = this.source.getSourceClips();
-        for (var i : number = 0; i < sourceClips.length; i++) {
-            var clip = sourceClips[i].getClip();
-            var newSequence = app.project.createNewSequenceFromClips(clip.name, [clip], folder);
+        let folder = dest.createBin(this.templateName);
+
+        let sourceClips = this.source.getSourceClips();
+        for (const element of sourceClips) {
+            let clip = element.getClip();
+            let newSequence = app.project.createNewSequenceFromClips(clip.name, [clip], folder);
         }
     }
 }

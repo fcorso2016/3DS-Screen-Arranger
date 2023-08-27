@@ -6,7 +6,7 @@ class SourceClips {
             throw new Error("The root must be of type BIN in order to be processed")
         }
 
-        for (var i : number = 0; i < root.children.numItems; i++) {
+        for (let i : number = 0; i < root.children.numItems; i++) {
             this.sourceClips.push(new SourceClip(root.children[i]))
         }
     }
