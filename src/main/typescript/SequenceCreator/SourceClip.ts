@@ -1,5 +1,5 @@
 class SourceClip {
-    private clip : ProjectItem;
+    private readonly clip : ProjectItem;
 
     constructor(file : ProjectItem) {
         if (file.type != ProjectItemType.FILE && file.type != ProjectItemType.CLIP) {
