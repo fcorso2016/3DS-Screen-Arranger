@@ -30,7 +30,7 @@
 
 			<Resources>
 				<MainPath>./index.html</MainPath>
-				<ScriptPath>./jsx/aftereffects.tsx</ScriptPath>
+				<ScriptPath>./typescript/SequenceCreator/SequenceBuilder.jsx</ScriptPath>
 				<CEFCommandLine>
 	   			<Parameter>--enable-nodejs</Parameter>
 				<Parameter>--mixed-context</Parameter>

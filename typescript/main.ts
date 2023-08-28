@@ -1,10 +1,13 @@
 function setSourceDirectory() : void {
     let csInterface = new CSInterface();
+    document.getElementById("selectionError").innerHTML = "It's doing something?";
+    csInterface.evalScript("setSourceBin()", function(result) {
+        (<HTMLInputElement>document.getElementById("selectedSourceBin")).value = result;
+        document.getElementById("selectionError").innerHTML = result;
+    });
+
     try {
-        csInterface.evalScript("SequenceBuilder.getInstance().setSourceBin()", function(result) {
-            (<HTMLInputElement>document.getElementById("selectedSourceBin")).value = result;
-            document.getElementById("selectionError").innerHTML = "Value";
-        });
+
     } catch (e) {
         document.getElementById("selectionError").innerHTML = e.message;
     }
