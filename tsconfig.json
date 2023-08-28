@@ -1,9 +1,11 @@
-{"compilerOptions":{"module":"none","noLib":true,
+{"compilerOptions":{
+  "target": "es5",
+  "module": "es2015",
+  "moduleResolution":"node",
   "lib": [
     "decorators",
     "dom",
     "es5",
     "scripthost",
-    "dom"
   ]
 }}

@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csinterface-ts": "^1.0.3",
+    "json-js": "^1.1.2",
     "types-for-adobe": "^7.0.12"
   }
 }

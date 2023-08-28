@@ -3,22 +3,21 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css"/>
-    <title>Template 1a</title>
+    <title>Premiere Script Editor</title>
     <script>
         var isNS = (navigator.appName == "Netscape") ? 1 : 0;
 
-        if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+        if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
 
-        function mischandler() {
+        function mischandler(){
             return false;
         }
 
-        function mousehandler(e) {
+        function mousehandler(e){
             var myevent = (isNS) ? e : event;
             var eventbutton = (isNS) ? myevent.which : myevent.button;
-            if ((eventbutton == 2) || (eventbutton == 3)) return false;
+            if((eventbutton==2)||(eventbutton==3)) return false;
         }
-
         document.oncontextmenu = mischandler;
         document.onmousedown = mousehandler;
         document.onmouseup = mousehandler;
@@ -28,20 +27,27 @@
 </head>
 <body scroll="no">
 
-<div id="sourceBin">
-    <label for="selectedSourceBin">Source Bin: </label>
-    <input type="text" id="selectedSourceBin" name="Selected Source Bin" placeholder="Select a Source Bin" readonly/>
-    <div id="selectCurrentBin" onclick="selectCurrentBin()">Set Selection as Source</div>
+<div id="headerDiv">
+
+    <div id="fileDiv">
+        <div id="newFileButton" onclick="newFile()">New</div>
+        <div id="openFileButton" onclick="openFile()">Open</div>
+        <div id="saveFileButton" onclick="saveFile()">Save</div>
+    </div>
+
+    <div id="debugDiv">
+        <!-- <div id="settingsButton">?</div> -->
+        <img id="playButton" src="assets/play.png" onclick="playClick()" />
+    </div>
 </div>
 
-<div id="sequenceData">
-	<label for="selectedTemplate">Screen Template: </label>
-    <input type="text" id="selectedTemplate" name="Selected Template" placeholder="Pick a Template"/>
+<div id="contentDiv">
+
 </div>
 
-<div id="runArea">
+<div id="footerDiv">
+    <div id="versionText">v0.0.7</div>
 </div>
-
 <script>
 
     function getOS() {
@@ -51,15 +57,16 @@
             windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
             os = null;
 
-        if (macosPlatforms.indexOf(platform) != -1) {
+        if(macosPlatforms.indexOf(platform) != -1) {
             os = "MAC";
-        } else if (windowsPlatforms.indexOf(platform) != -1) {
+        } else if(windowsPlatforms.indexOf(platform) != -1) {
             os = "WIN";
         }
         return os;
     }
 
 </script>
+<script src="../../node_modules/csinterface-ts/dist/csinterface-ts.js"></script>
 <script src="typescript/main.js"></script>
 </body>
 </html>
