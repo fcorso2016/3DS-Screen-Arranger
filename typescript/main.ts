@@ -1,5 +1,3 @@
-import {CSInterface} from "csinterface-ts";
-
 function setSourceDirectory() : void {
     let csInterface = new CSInterface();
     try {
