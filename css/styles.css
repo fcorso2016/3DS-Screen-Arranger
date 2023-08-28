@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    src: url("Montserrat-Regular.ttf") format('truetype');
+}
+
+* {
+	font-family: Montserrat;
+}
+
+html {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+body {
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+#selectBinDiv {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+}
+
+#selectBinLabel {
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	color: #999999;
+	margin-left: 10px;
+	padding-top: 7px;
+}
+
+#selectedBinBox {
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	margin-left: 10px;
+	padding-top: 7px;
+}
+
+#selectionError {
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	color: #C80000;
+	margin-left: 10px;
+	padding-top: 7px;
+}
+
+#setSelectionToCurrent {
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	margin-left: 10px;
+	padding-top: 7px;
+}
+
+#footerDiv {
+	width: 100vw;
+	height: 30px;
+	display: inline-block;
+	position: relative;
+	background-color: #303030;
+}
+
+#versionText {
+	font-size: 12px;
+	color: #999999;
+	margin-left: 5px;
+	margin-top: 5px;
+}

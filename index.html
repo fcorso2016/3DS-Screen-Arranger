@@ -27,22 +27,13 @@
 </head>
 <body scroll="no">
 
-<div id="headerDiv">
-
-    <div id="fileDiv">
-        <div id="newFileButton" onclick="newFile()">New</div>
-        <div id="openFileButton" onclick="openFile()">Open</div>
-        <div id="saveFileButton" onclick="saveFile()">Save</div>
-    </div>
-
-    <div id="debugDiv">
-        <!-- <div id="settingsButton">?</div> -->
-        <img id="playButton" src="assets/play.png" onclick="playClick()" />
-    </div>
+<div id="selectBinDiv">
+    <label id="selectBinLabel" for="selectedBinBox">Input Bin</label>
+    <input id="selectedBinBox" type="text" readonly/>
+    <button id="setSelectionToCurrent" onclick="setSourceDirectory()">Set Selection as Input</button>
 </div>
 
-<div id="contentDiv">
-
+<div id="selectionError">
 </div>
 
 <div id="footerDiv">
