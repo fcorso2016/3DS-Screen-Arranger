@@ -24,7 +24,7 @@ abstract class GameDisplay {
         newSequence.setSettings(settings);
 
         let anchorPoint = findComponentProperty(newSequence.videoTracks[0].clips[0], "Motion", "Anchor Point");
-        anchorPoint.setValue([(this.ox + this.width / 2) / this.getOverallWidth(), (this.ox + this.height / 2) / this.getOverallHeight()]);
+        anchorPoint.setValue([(this.ox + this.width / 2) / this.getOverallWidth(), (this.oy + this.height / 2) / this.getOverallHeight()]);
 
         return newSequence;
     }

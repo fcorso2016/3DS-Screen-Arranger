@@ -7,27 +7,21 @@ class N3DSScreens extends DualScreens {
         this.bottomScreen = new N3DSDisplay(gameplay, 400, 0, 320, 240);
     }
 
-    createSequences(screensBin : ProjectItem, outputBin : ProjectItem) : Array<Sequence> {
+    createSequences(screenBins : ScreenBins) : Array<Sequence> {
+        let N3DS = screenBins as N3DSScreenBins;
+
         let ret : Array<Sequence> = [];
 
+        let topScreenSequence = this.topScreen.createSequence(N3DS.topScreenBin);
+        let bottomScreenSequence = this.bottomScreen.createSequence(N3DS.bottomScreenBin);
 
-        let topScreenBin = screensBin.createBin("TopScreen");
-        let bottomScreenBin = screensBin.createBin("BottomScreen");
-        let topScreenOnlyBin = outputBin.createBin("TopScreenOnly");
-        let bottomScreenOnlyBin = outputBin.createBin("BottomScreenOnly");
-        let reducedLowerScreenBin = outputBin.createBin("ReducedLowerScreen");
-        let stackedScreensBin = outputBin.createBin("StackedScreens");
-
-        let topScreenSequence = this.topScreen.createSequence(topScreenBin);
-        let bottomScreenSequence = this.bottomScreen.createSequence(bottomScreenBin);
-
-        ret.push(this.createSingleScreenSequence(topScreenSequence, topScreenOnlyBin));
-        ret.push(this.createSingleScreenSequence(bottomScreenSequence, bottomScreenOnlyBin));
+        ret.push(this.createSingleScreenSequence(topScreenSequence, N3DS.topScreenOnlyBin));
+        ret.push(this.createSingleScreenSequence(bottomScreenSequence, N3DS.bottomScreenOnlyBin));
 
         ret.push(this.createTwoScreenSequence(new ScreenClip(topScreenSequence.projectItem, 640, 384, 320),
-            new ScreenClip(bottomScreenSequence.projectItem, 1600, 840, 200), background, reducedLowerScreenBin));
+            new ScreenClip(bottomScreenSequence.projectItem, 1600, 840, 200), N3DS.reducedLowerScreenBin));
         ret.push(this.createTwoScreenSequence(new ScreenClip(topScreenSequence.projectItem, 960, 270, 225),
-            new ScreenClip(bottomScreenSequence.projectItem, 960, 810, 225), background, stackedScreensBin));
+            new ScreenClip(bottomScreenSequence.projectItem, 960, 810, 225), N3DS.stackedScreensBin));
 
         return ret;
     }

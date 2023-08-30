@@ -17,7 +17,7 @@ abstract class DualScreens extends GameScreens {
         return newSequence;
     }
 
-    protected createTwoScreenSequence(topScreen : ScreenClip, bottomScreen : ScreenClip, background : ProjectItem, destination : ProjectItem) : Sequence {
+    protected createTwoScreenSequence(topScreen : ScreenClip, bottomScreen : ScreenClip, destination : ProjectItem) : Sequence {
         let newSequence = this.createInitialSequence(topScreen.screen, destination);
         newSequence.insertClip(topScreen.screen, newSequence.getInPointAsTime(), 2, 0);
         newSequence.audioTracks[0].clips[0].remove(false, false);
@@ -61,7 +61,7 @@ abstract class DualScreens extends GameScreens {
 
     private scaleBackground(clip : TrackItem, sequence : Sequence) {
         let backgroundScale = findComponentProperty(clip, "Motion", "Scale");
-        backgroundScale.setValue(this.calculateBackgroundScale(background, sequence));
+        backgroundScale.setValue(this.calculateBackgroundScale(this.background, sequence));
         this.applyEffect("Camera Blur");
     }
 

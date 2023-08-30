@@ -9,5 +9,5 @@ abstract class GameScreens {
         this.background = background;
     }
 
-    abstract createSequences(screensBin : ProjectItem, outputBin : ProjectItem) : Array<Sequence>;
+    abstract createSequences(screenBins : ScreenBins) : Array<Sequence>;
 }
