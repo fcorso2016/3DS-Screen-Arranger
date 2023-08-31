@@ -12,7 +12,7 @@
 let targetBin = getItem("GameplayFootage", "Pokémon Moon", "Raw");
 let background = getItem("Graphics", "Alola_artwork.png");
 let outputLocation = getItem("GameplayFootage", "Pokémon Moon")
-main(targetBin, background, outputLocation, "Screens")
+main(targetBin, background, outputLocation, "Edited")
 
 function main(targetBin : ProjectItem, background : ProjectItem, outputLocation : ProjectItem, outputName : string) {
     let newBin = outputLocation.createBin(outputName)
