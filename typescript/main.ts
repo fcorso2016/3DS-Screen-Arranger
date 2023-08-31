@@ -9,9 +9,9 @@
 // @include "Utils/ScreenClip.js"
 // @include "Utils/N3DSScreenBins.js"
 
-let targetBin = getItem("GameplayFootage", "Pokémon Moon", "Raw");
-let background = getItem("Graphics", "Alola_artwork.png");
-let outputLocation = getItem("GameplayFootage", "Pokémon Moon")
+var targetBin = getItem("GameplayFootage", "Pokémon Super Mystery Dungeon", "Raw");
+var background = getItem("GameplayFootage", "Pokémon Super Mystery Dungeon", "Mystery_Dungeon_World_PSMD.png");
+var outputLocation = getItem("GameplayFootage", "Pokémon Super Mystery Dungeon");
 main(targetBin, background, outputLocation, "Edited")
 
 function main(targetBin : ProjectItem, background : ProjectItem, outputLocation : ProjectItem, outputName : string) {

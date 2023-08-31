@@ -53,10 +53,7 @@ abstract class DualScreens extends GameScreens {
         let widthScale = this.screenWidth / screen.frameSizeHorizontal;
         let heightScale = this.screenHeight / screen.frameSizeVertical;
 
-        if (widthScale < 1 && heightScale < 1)
-            return Math.max(widthScale, heightScale) * 100;
-        else
-            return Math.min(widthScale, heightScale) * 100;
+        return Math.min(widthScale, heightScale) * 100;
     }
 
     private scaleBackground(clip : TrackItem, sequence : Sequence) {
@@ -76,10 +73,8 @@ abstract class DualScreens extends GameScreens {
         let widthScale = sequence.frameSizeHorizontal / width;
         let heightScale = sequence.frameSizeVertical / height;
 
-        if (widthScale < 1 && heightScale < 1)
-            return Math.min(widthScale, heightScale) * 100 + 15;
-        else
-            return Math.max(widthScale, heightScale) * 100 + 15;
+
+        return Math.max(widthScale, heightScale) * 100 + 15;
     }
 
     private applyEffect(effect : string) : void {
