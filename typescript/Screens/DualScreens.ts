@@ -74,7 +74,7 @@ abstract class DualScreens extends GameScreens {
         let heightScale = sequence.frameSizeVertical / height;
 
 
-        return Math.max(widthScale, heightScale) * 100 + 15;
+        return Math.max(widthScale, heightScale) * 115;
     }
 
     private applyEffect(effect : string) : void {
